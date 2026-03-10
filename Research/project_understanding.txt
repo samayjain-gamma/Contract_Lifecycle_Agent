@@ -1,0 +1,53 @@
+Contract Lifecycle Agent for 2-Person Studios -
+Tracks contract status
+Sends renewal reminders
+Flags overdue deliverables
+Drafts amendments
+
+
+
+
+Track Contract status :
+Draft → Under Review → Negotiation → Signed → Active → Expiring → Completed
+
+Agent stores and updates this status automatically
+Use tools like:
+        state machines
+        workflow orchestrators
+        task boards
+
+
+
+Send renewal reminders:
+Send reminder before expiration date , notice period
+
+Calendar / notification systems
+        Slack alerts
+        Email
+        Task manager
+
+
+Flags overdue deliverables
+deliverables : specific outputs, results or items that one party must provide to another as part of a contract or project.
+if deliverable is overdue, then flag it
+
+
+Draft amendments
+Contracts sometimes need changes.
+extending the deadline , modifying payment terms and many more
+
+instead or writing a  new contract, an ammendment is created
+
+
+
+
+
+What to do :
+
+track contract status
+monitor deliverables
+receive renewal reminders
+detect overdue obligations
+generate contract amendments
+keep contracts organized
+

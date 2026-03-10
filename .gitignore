@@ -11,4 +11,5 @@ wheels/
 
 
 uv.lock
-.git
+.git/
+data/

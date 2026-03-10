@@ -1,0 +1,447 @@
+Your plan is solid for a **simple MVP**. The key now is to keep the architecture minimal while ensuring the system works reliably. Below is a **refined version of your design** with only the necessary components.
+
+---
+
+# 1. Overall System Flow
+
+Your pipeline should look like this:
+
+```text
+User uploads contract (PDF/TXT)
+        │
+        ▼
+Input Guardrails
+        │
+        ▼
+LLM Extraction
+        │
+        ▼
+Structured Data
+        │
+        ▼
+PostgreSQL Storage
+        │
+        ▼
+Background Scheduler
+        │
+        ├─ Send renewal reminders
+        └─ Flag overdue deliverables
+```
+
+
+
+User actions later:
+
+```text
+Update deliverable status
+Create amendment
+Modify dates
+```
+
+This is a **clean and realistic MVP**.
+
+---
+
+# 2. Step 1 — Document Input
+
+User uploads either:
+
+```text
+PDF
+TXT
+```
+
+You extract the text first.
+
+Two possible approaches:
+
+### Approach A (simplest)
+
+```python
+if file_type == "pdf":
+    extract_text_pdf()
+elif file_type == "txt":
+    read_text_file()
+```
+
+Libraries:
+
+* `pypdf`
+* `pdfplumber`
+
+---
+
+# 3. Step 2 — Input Guardrails
+
+Guardrails prevent invalid input before the LLM.
+
+Checks you can implement **without LLM**:
+
+```text
+File size limit
+File type validation
+Minimum text length
+```
+
+Example:
+
+```python
+if len(text) < 500:
+    raise ValueError("Document too small to be a contract")
+```
+
+Optional LLM guardrail:
+
+Prompt:
+
+```
+Is this document a contract? Answer yes or no.
+```
+
+If **no**, reject the upload.
+
+For MVP you can **skip LLM guardrails**.
+
+---
+
+# 4. Step 3 — LLM Metadata Extraction
+
+Send contract text to the LLM.
+
+Prompt example:
+
+```
+Extract the following information from this contract:
+
+company_name
+contract_name
+start_date
+expiry_date
+
+Extract deliverables as a list:
+deliverable_name
+delivery_date
+deliverable_status (default pending)
+
+Return JSON.
+```
+
+Example output:
+
+```json
+{
+  "company_name": "ABC Startup",
+  "contract_name": "Website Development Agreement",
+  "start_date": "2026-03-01",
+  "expiry_date": "2026-05-30",
+  "deliverables": [
+    {
+      "deliverable_name": "UI Design",
+      "delivery_date": "2026-03-20",
+      "deliverable_status": "pending"
+    },
+    {
+      "deliverable_name": "Backend API",
+      "delivery_date": "2026-04-10",
+      "deliverable_status": "pending"
+    }
+  ]
+}
+```
+
+---
+
+# 5. Step 4 — Database Design
+
+You correctly proposed **two tables**, which is ideal for MVP.
+
+### Table 1 — Contracts
+
+```sql
+contracts
+---------
+id
+company_name
+contract_name
+status
+start_date
+expiry_date
+created_at
+```
+
+Example row:
+
+```text
+id: 1
+company_name: ABC Startup
+contract_name: Website Development
+status: active
+start_date: 2026-03-01
+expiry_date: 2026-05-30
+```
+
+---
+
+### Table 2 — Deliverables
+
+```sql
+deliverables
+------------
+id
+contract_id
+deliverable_name
+delivery_date
+deliverable_status
+```
+
+Example:
+
+```text
+contract_id: 1
+deliverable_name: UI Design
+delivery_date: 2026-03-20
+deliverable_status: pending
+```
+
+Relationship:
+
+```text
+contracts 1 ──── many deliverables
+```
+
+---
+
+# 6. Step 5 — Deliverable Status Updates
+
+User marks deliverable as completed.
+
+Example API:
+
+```text
+PATCH /deliverables/{id}
+```
+
+Example update:
+
+```json
+{
+  "deliverable_status": "completed"
+}
+```
+
+Database update:
+
+```sql
+UPDATE deliverables
+SET deliverable_status = 'completed'
+WHERE id = 3;
+```
+
+---
+
+# 7. Step 6 — Amendments
+
+User modifies contract information.
+
+Example changes:
+
+```text
+Change expiry date
+Change deliverable deadline
+Add new deliverable
+```
+
+For MVP you can **directly update the database**.
+
+Example:
+
+```sql
+UPDATE contracts
+SET expiry_date = '2026-06-15'
+WHERE id = 1;
+```
+
+Optional later improvement:
+
+Create an **amendments table** to track history.
+
+But you can skip it for now.
+
+---
+
+# 8. Step 7 — Reminder System
+
+You need a **background scheduler**.
+
+Runs once per day.
+
+Checks:
+
+```text
+Contracts expiring soon
+Deliverables overdue
+```
+
+Logic example:
+
+```python
+if expiry_date - today <= 7 days:
+    send_reminder()
+```
+
+Deliverable check:
+
+```python
+if delivery_date < today AND status != completed:
+    mark overdue
+```
+
+---
+
+# 9. Step 8 — Overdue Deliverables
+
+Update status automatically.
+
+Example:
+
+```sql
+UPDATE deliverables
+SET deliverable_status = 'overdue'
+WHERE delivery_date < CURRENT_DATE
+AND deliverable_status != 'completed';
+```
+
+Alert example:
+
+```text
+Deliverable overdue
+
+Contract: Website Development
+Deliverable: Backend API
+Delay: 2 days
+```
+
+---
+
+# 10. Minimal Backend Structure
+
+A clean project structure:
+
+```text
+contract-agent
+│
+├── app
+│   ├── api
+│   │   ├── contracts.py
+│   │   ├── deliverables.py
+│   │
+│   ├── services
+│   │   ├── extraction_service.py
+│   │   ├── reminder_service.py
+│   │
+│   ├── models
+│   │   ├── contract.py
+│   │   ├── deliverable.py
+│   │
+│   ├── db
+│   │   ├── database.py
+│
+├── scheduler
+│   └── reminder_jobs.py
+│
+└── main.py
+```
+
+---
+
+# 11. Technologies (Keep it Simple)
+
+Backend:
+
+```text
+Python
+FastAPI
+```
+
+Database:
+
+```text
+PostgreSQL
+SQLAlchemy
+```
+
+LLM:
+
+```text
+OpenAI API
+```
+
+Scheduler:
+
+```text
+APScheduler
+or simple cron job
+```
+
+PDF parsing:
+
+```text
+pdfplumber
+```
+
+---
+
+# 12. Final MVP Feature List
+
+Your project should include:
+
+Core features:
+
+```text
+Contract upload
+Metadata extraction using LLM
+Deliverable extraction
+PostgreSQL storage
+Deliverable status updates
+```
+
+Automation:
+
+```text
+Expiry reminders
+Overdue deliverable detection
+```
+
+User actions:
+
+```text
+Update deliverable status
+Modify contract fields
+```
+
+---
+
+# 13. Final Assessment
+
+Your design is **correct and well scoped for a simple AI project**.
+
+Key strengths:
+
+* simple architecture
+* only two database tables
+* clear workflow
+* practical AI use (metadata extraction)
+
+Avoid adding:
+
+```text
+vector databases
+multi-agent systems
+complex workflows
+```
+
+They are unnecessary for this project.
+
+---
+
+If you'd like, I can also show a **very clean LLM prompt design for contract + deliverable extraction**, which dramatically improves accuracy.
