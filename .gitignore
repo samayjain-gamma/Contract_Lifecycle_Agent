@@ -13,3 +13,4 @@ wheels/
 uv.lock
 .git/
 data/
+.env
