@@ -4,10 +4,12 @@ from fastapi import APIRouter, File, HTTPException, UploadFile
 
 from src.core.logger import logger
 from src.queries.view import view_database_route
-from src.scheduler.start_scheduler import start_scheduler
 from src.services.contract_extractor import extract_contract
 from src.services.database_services.contract import insert_contract
-from src.services.database_services.deliverables import insert_deliverables
+from src.services.database_services.deliverables import (
+    insert_deliverables,
+    modify_deliverable_status,
+)
 from src.services.json_filter import filter_contract_json
 
 router = APIRouter(prefix="/contracts", tags=["Contracts"])
@@ -48,3 +50,17 @@ def get_database_view():
     data = view_database_route()
 
     return {"status": "success", "data": data}
+
+
+@router.patch("/deliverables/{deliverable_id}/toggle")
+def toggle_status(deliverable_id: int):
+
+    deliverable = modify_deliverable_status(deliverable_id)
+
+    if not deliverable:
+        raise HTTPException(status_code=404, detail="Deliverable not found")
+
+    return {
+        "deliverable_id": deliverable.deliverable_id,
+        "new_status": deliverable.delivery_status,
+    }

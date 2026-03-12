@@ -54,7 +54,7 @@ class OllamaLLM:
         return response["message"]["content"]
 
 
-def get_llm(temperature=0.2):
+def get_llm(temperature=0.0):
 
     return OllamaLLM(temperature=temperature)
 

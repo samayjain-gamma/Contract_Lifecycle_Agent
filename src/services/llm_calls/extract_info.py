@@ -7,6 +7,7 @@ with open(file_path, "r") as file:
     data = file.read()
 
 prompt = extract_prompt.format(contract_text=data)
+print(prompt)
 
 answer = llm.invoke(prompt=prompt)
 
