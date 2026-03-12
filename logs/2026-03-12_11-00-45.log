@@ -1,0 +1,14 @@
+{
+    "time": "2026-03-12 11:00:45,113",
+    "level": "INFO",
+    "filename": "start_scheduler.py",
+    "lineno": 13,
+    "message": "Entered into scheduler i.e. start_scheduler() "
+}
+{
+    "time": "2026-03-12 11:02:45,094",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 11,
+    "message": "Entered into check_contract_expiry()"
+}

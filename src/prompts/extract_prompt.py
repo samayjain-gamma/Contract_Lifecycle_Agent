@@ -13,7 +13,7 @@ delivery_date
 delivery_status
 description
 
-Return the result strictly as JSON.
+Return the result strictly as JSON not any other thing
 
 Contract text:
 {contract_text}

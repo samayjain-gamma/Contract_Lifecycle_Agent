@@ -1,0 +1,14 @@
+{
+    "time": "2026-03-12 13:35:57,918",
+    "level": "INFO",
+    "filename": "start_scheduler.py",
+    "lineno": 21,
+    "message": "Entered into scheduler i.e. start_scheduler() "
+}
+{
+    "time": "2026-03-12 13:35:57,918",
+    "level": "INFO",
+    "filename": "start_scheduler.py",
+    "lineno": 22,
+    "message": "scheduler.get_jobs() : [<Job (id=7acbc2f64892436eb7d542fc7635a487 name=check_contract_expiry)>, <Job (id=c09badfceedb4ce9b1b764fb5642f77f name=check_overdue_deliverables)>]"
+}

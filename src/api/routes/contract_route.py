@@ -1,8 +1,10 @@
 import json
 
-from fastapi import APIRouter, File, UploadFile
+from fastapi import APIRouter, File, HTTPException, UploadFile
 
 from src.core.logger import logger
+from src.queries.view import view_database_route
+from src.scheduler.start_scheduler import start_scheduler
 from src.services.contract_extractor import extract_contract
 from src.services.database_services.contract import insert_contract
 from src.services.database_services.deliverables import insert_deliverables
@@ -38,3 +40,11 @@ async def upload_contract(file: UploadFile = File(...)):
     insert_deliverables(contract_id, deliverables)
 
     return {"message": "Contract stored successfully", "contract_id": contract_id}
+
+
+@router.get("/database/view")
+def get_database_view():
+
+    data = view_database_route()
+
+    return {"status": "success", "data": data}

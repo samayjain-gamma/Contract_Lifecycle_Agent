@@ -1,0 +1,28 @@
+{
+    "time": "2026-03-11 18:39:34,843",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 21,
+    "message": "Entered in to send mail"
+}
+{
+    "time": "2026-03-11 18:39:34,843",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 29,
+    "message": "Enter into try block"
+}
+{
+    "time": "2026-03-11 18:39:37,144",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 31,
+    "message": "enter in with block"
+}
+{
+    "time": "2026-03-11 18:39:38,689",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 34,
+    "message": "goinf to call sendmail"
+}

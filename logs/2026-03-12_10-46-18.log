@@ -1,0 +1,7 @@
+{
+    "time": "2026-03-12 10:46:18,357",
+    "level": "INFO",
+    "filename": "start_scheduler.py",
+    "lineno": 13,
+    "message": "Entered into scheduler i.e. start_scheduler() "
+}

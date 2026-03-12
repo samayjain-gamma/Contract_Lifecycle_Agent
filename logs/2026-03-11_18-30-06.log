@@ -1,0 +1,35 @@
+{
+    "time": "2026-03-11 18:30:06,341",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 20,
+    "message": "Entered in to send mail"
+}
+{
+    "time": "2026-03-11 18:30:06,341",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 28,
+    "message": "Enter into try block"
+}
+{
+    "time": "2026-03-11 18:30:08,814",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 30,
+    "message": "enter in with block"
+}
+{
+    "time": "2026-03-11 18:30:10,659",
+    "level": "ERROR",
+    "filename": "mail_service.py",
+    "lineno": 45,
+    "message": "Error occured while  sneding mail"
+}
+{
+    "time": "2026-03-11 18:30:10,667",
+    "level": "ERROR",
+    "filename": "exception.py",
+    "lineno": 18,
+    "message": "{'error': \"(334, b'UGFzc3dvcmQ6')\", 'file': '/home/my/ai_projects/Contract_Lifecycle_Agent/src/scheduler/mail_service.py', 'line': 29, 'trace': 'Traceback (most recent call last):\\n  File \"/home/my/ai_projects/Contract_Lifecycle_Agent/src/scheduler/mail_service.py\", line 32, in send_email\\n    server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)\\n  File \"/home/my/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/smtplib.py\", line 739, in login\\n    (code, resp) = self.auth(\\n                   ^^^^^^^^^^\\n  File \"/home/my/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/smtplib.py\", line 652, in auth\\n    authobject(challenge).encode(\\'ascii\\'), eol=\\'\\')\\n    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^\\nAttributeError: \\'NoneType\\' object has no attribute \\'encode\\'\\n\\nDuring handling of the above exception, another exception occurred:\\n\\nTraceback (most recent call last):\\n  File \"/home/my/ai_projects/Contract_Lifecycle_Agent/src/scheduler/mail_service.py\", line 29, in send_email\\n    with smtplib.SMTP(SMTP_SERVER, SMTP_PORT) as server:\\n  File \"/home/my/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/smtplib.py\", line 284, in __exit__\\n    raise SMTPResponseException(code, message)\\nsmtplib.SMTPResponseException: (334, b\\'UGFzc3dvcmQ6\\')\\n'}"
+}

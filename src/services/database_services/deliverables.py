@@ -25,3 +25,33 @@ def insert_deliverables(contract_id, deliverables):
 
     finally:
         session.close()
+
+
+def modify_deliverable_status(deliverable_id: int):
+
+    session = SessionLocal()
+
+    deliverable = (
+        session.query(Deliverable)
+        .filter(Deliverable.deliverable_id == deliverable_id)
+        .first()
+    )
+
+    if not deliverable:
+        session.close()
+        return None
+
+    if deliverable.delivery_status == "Delivered":
+        deliverable.delivery_status = "Pending"
+    else:
+        deliverable.delivery_status = "Delivered"
+
+    session.commit()
+    session.refresh(deliverable)
+    session.close()
+
+    return deliverable
+
+
+if __name__ == "__main__":
+    modify_deliverable_status(2)

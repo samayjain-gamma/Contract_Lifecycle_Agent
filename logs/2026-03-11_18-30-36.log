@@ -1,0 +1,35 @@
+{
+    "time": "2026-03-11 18:30:36,188",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 21,
+    "message": "Entered in to send mail"
+}
+{
+    "time": "2026-03-11 18:30:36,188",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 29,
+    "message": "Enter into try block"
+}
+{
+    "time": "2026-03-11 18:30:38,615",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 31,
+    "message": "enter in with block"
+}
+{
+    "time": "2026-03-11 18:30:41,689",
+    "level": "ERROR",
+    "filename": "mail_service.py",
+    "lineno": 46,
+    "message": "Error occured while  sneding mail"
+}
+{
+    "time": "2026-03-11 18:30:41,695",
+    "level": "ERROR",
+    "filename": "exception.py",
+    "lineno": 18,
+    "message": "{'error': \"(535, b'5.7.8 Username and Password not accepted. For more information, go to\\\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c73cdf9eefdsm2184486a12.28 - gsmtp')\", 'file': '/home/my/ai_projects/Contract_Lifecycle_Agent/src/scheduler/mail_service.py', 'line': 33, 'trace': 'Traceback (most recent call last):\\n  File \"/home/my/ai_projects/Contract_Lifecycle_Agent/src/scheduler/mail_service.py\", line 33, in send_email\\n    server.login(EMAIL_ADDRESS, EMAIL_PASSWORD)\\n  File \"/home/my/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/smtplib.py\", line 750, in login\\n    raise last_exception\\n  File \"/home/my/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/smtplib.py\", line 739, in login\\n    (code, resp) = self.auth(\\n                   ^^^^^^^^^^\\n  File \"/home/my/.local/share/uv/python/cpython-3.11.14-linux-x86_64-gnu/lib/python3.11/smtplib.py\", line 662, in auth\\n    raise SMTPAuthenticationError(code, resp)\\nsmtplib.SMTPAuthenticationError: (535, b\\'5.7.8 Username and Password not accepted. For more information, go to\\\\n5.7.8  https://support.google.com/mail/?p=BadCredentials 41be03b00d2f7-c73cdf9eefdsm2184486a12.28 - gsmtp\\')\\n'}"
+}

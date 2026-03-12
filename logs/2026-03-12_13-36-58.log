@@ -1,0 +1,98 @@
+{
+    "time": "2026-03-12 13:36:58,207",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 11,
+    "message": "Entered into check_contract_expiry()"
+}
+{
+    "time": "2026-03-12 13:36:58,219",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 25,
+    "message": "expiry date type : type(2026-03-15)"
+}
+{
+    "time": "2026-03-12 13:37:57,899",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 11,
+    "message": "Entered into check_contract_expiry()"
+}
+{
+    "time": "2026-03-12 13:37:57,902",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 25,
+    "message": "expiry date type : type(2026-03-15)"
+}
+{
+    "time": "2026-03-12 13:38:57,898",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 11,
+    "message": "Entered into check_contract_expiry()"
+}
+{
+    "time": "2026-03-12 13:38:57,899",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 25,
+    "message": "expiry date type : type(2026-03-15)"
+}
+{
+    "time": "2026-03-12 13:39:57,898",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 11,
+    "message": "Entered into check_contract_expiry()"
+}
+{
+    "time": "2026-03-12 13:39:57,899",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 25,
+    "message": "expiry date type : type(2026-03-15)"
+}
+{
+    "time": "2026-03-12 13:40:57,899",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 11,
+    "message": "Entered into check_contract_expiry()"
+}
+{
+    "time": "2026-03-12 13:40:57,900",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 25,
+    "message": "expiry date type : type(2026-03-15)"
+}
+{
+    "time": "2026-03-12 13:41:57,898",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 11,
+    "message": "Entered into check_contract_expiry()"
+}
+{
+    "time": "2026-03-12 13:41:57,899",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 25,
+    "message": "expiry date type : type(2026-03-15)"
+}
+{
+    "time": "2026-03-12 13:42:57,899",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 11,
+    "message": "Entered into check_contract_expiry()"
+}
+{
+    "time": "2026-03-12 13:42:57,902",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 25,
+    "message": "expiry date type : type(2026-03-15)"
+}

@@ -31,11 +31,6 @@ class GroqLLM:
         return response
 
 
-def get_llm(temperature=0.2):
-
-    return GroqLLM(temperature=temperature)
-
-
 class OllamaLLM:
 
     def __init__(self, temperature=0.0, model="phi"):
@@ -59,7 +54,7 @@ class OllamaLLM:
         return response["message"]["content"]
 
 
-def get_llm(temperature=0.0):
+def get_llm(temperature=0.2):
 
     return OllamaLLM(temperature=temperature)
 

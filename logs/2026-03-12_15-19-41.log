@@ -1,0 +1,56 @@
+{
+    "time": "2026-03-12 15:19:41,454",
+    "level": "INFO",
+    "filename": "start_scheduler.py",
+    "lineno": 16,
+    "message": "Entered into scheduler i.e. start_scheduler() "
+}
+{
+    "time": "2026-03-12 15:19:41,455",
+    "level": "INFO",
+    "filename": "start_scheduler.py",
+    "lineno": 17,
+    "message": "scheduler.get_jobs() : [<Job (id=fec8cefb9e074d528eb3a2506531c674 name=check_contract_expiry)>, <Job (id=b568f4bc901c4574b17f066ebc8aafc6 name=check_overdue_deliverables)>]"
+}
+{
+    "time": "2026-03-12 15:20:41,436",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 11,
+    "message": "Entered into check_contract_expiry()"
+}
+{
+    "time": "2026-03-12 15:20:41,478",
+    "level": "INFO",
+    "filename": "contract_scheduler.py",
+    "lineno": 22,
+    "message": "expiry date type : <class 'datetime.date'>"
+}
+{
+    "time": "2026-03-12 15:20:41,478",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 21,
+    "message": "Entered in to send mail"
+}
+{
+    "time": "2026-03-12 15:20:41,479",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 29,
+    "message": "Enter into try block"
+}
+{
+    "time": "2026-03-12 15:20:43,812",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 31,
+    "message": "enter in with block"
+}
+{
+    "time": "2026-03-12 15:20:45,361",
+    "level": "INFO",
+    "filename": "mail_service.py",
+    "lineno": 34,
+    "message": "goinf to call sendmail"
+}

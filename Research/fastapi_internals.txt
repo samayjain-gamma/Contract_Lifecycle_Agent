@@ -1,0 +1,18 @@
+4 componets
+supervisor
+frastapi
+scheduler - internal -> python's threading module , threading.Thread()
+executor  - done by  concurrent.futures (executor framework)
+
+
+but
+
+all this processes share one gil
+so no true parallelism achieved
+
+if achieve ture prallelism == True:
+    insoide APscheduler:
+        use ProcessPoolExecutor not ThreadPoolExecutor  (both are from concurrent.futures)
+
+
+    
