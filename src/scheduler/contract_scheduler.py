@@ -53,6 +53,19 @@ def check_overdue_deliverables():
         for d in deliverables:
             delivery_date = datetime.strptime(d.delivery_date, "%Y-%m-%d").date()
 
+            if delivery_date == today and d.delivery_status != "Delivered":
+                send_email(
+                    to_email=contract.email,
+                    subject="Alert: Last delivery date",
+                    body=f"""
+Deliverable: {d.deliverable_name}
+
+Delivery date: {d.delivery_date}
+
+Status: Overdue
+""",
+                )
+
             if delivery_date < today and d.delivery_status != "Delivered":
                 send_email(
                     to_email=contract.email,
@@ -65,4 +78,5 @@ Delivery date: {d.delivery_date}
 Status: Overdue
 """,
                 )
+
     session.close()

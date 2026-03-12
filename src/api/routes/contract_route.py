@@ -28,14 +28,12 @@ async def upload_contract(file: UploadFile = File(...)):
         "LLM call occured, now move to the next process, which is filter_contract_json..."
     )
 
-    # convert to dict
     extracted_json = json.loads(llm_response)
     logger.info(f"extracted_json : {extracted_json}")
-    # filter for database
+
     contract_data, deliverables = filter_contract_json(extracted_json)
     logger.info(f"contract_data : {contract_data}")
     logger.info(f"deliverables : {deliverables}")
-    # contract_data, deliverables = filter_contract_json(llm_response)
 
     contract_id = insert_contract(contract_data)
 
