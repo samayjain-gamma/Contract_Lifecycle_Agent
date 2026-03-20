@@ -6,7 +6,7 @@ llm = get_llm()
 
 # def extract_contract(file_path):
 #     print(file_path)
-#     with open(file_path, "r", encoding="utf-8") as f:
+#     with open(file_path, "r") as f:
 #         data = f.read()
 
 #     prompt = extract_prompt.format(contract_text=data)

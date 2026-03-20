@@ -8,8 +8,12 @@ from src.scheduler.contract_scheduler import (
 
 scheduler = BackgroundScheduler()
 
-scheduler.add_job(check_contract_expiry, "interval", days=1)
-scheduler.add_job(check_overdue_deliverables, "interval", days=1)
+scheduler.add_job(check_contract_expiry, "interval", hours=1)
+scheduler.add_job(check_overdue_deliverables, "interval", hours=1)
+
+# scheduler.add_job(check_contract_expiry, "interval", minutes = 1)
+# scheduler.add_job(check_overdue_deliverables, "interval", minutes=1)
+
 jobs = scheduler.get_jobs()
 
 

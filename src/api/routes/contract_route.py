@@ -50,8 +50,8 @@ def get_database_view():
     return {"status": "success", "data": data}
 
 
-@router.patch("/deliverables/{deliverable_id}/toggle")
-def toggle_status(deliverable_id: int):
+@router.patch("/deliverables/{deliverable_id}/modify_deliverable_status")
+def modify_delivery_status(deliverable_id: int):
 
     deliverable = modify_deliverable_status(deliverable_id)
 

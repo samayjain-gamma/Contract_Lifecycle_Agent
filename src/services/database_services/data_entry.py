@@ -2,7 +2,6 @@ from src.services.database_services.contract import insert_contract
 from src.services.database_services.deliverables import insert_deliverables
 from src.services.json_filter import filter_contract_json
 
-# LLM JSON
 raw_json = {
     "contract_name": "Website Development Agreement",
     "starting_date": "2026-03-01",
@@ -32,11 +31,12 @@ raw_json = {
     ],
 }
 
-# Filter for DB insertion
+
 contract_data, deliverables = filter_contract_json(raw_json)
 
 print("CONTRACT INFORMATION : \n", contract_data)
 print("DELIVERABLE INFORMAITON : \n", deliverables)
-# Insert into DB
+
+
 contract_id = insert_contract(contract_data)
 insert_deliverables(contract_id, deliverables)

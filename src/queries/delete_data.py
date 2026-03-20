@@ -8,9 +8,7 @@ def delete_all_data():
 
     try:
         session.query(Deliverable).delete()
-
         session.query(Contract).delete()
-
         session.commit()
 
         print("All data deleted from contracts and deliverables.")

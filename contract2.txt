@@ -1,0 +1,31 @@
+Contract Name: Mobile Application Development Agreement
+
+Company: NovaTech Innovations
+
+Contract Status: Active
+
+Starting Date: 2026-03-05
+
+Expiry Date: 2026-03-17
+
+Description:
+This agreement defines the terms under which NovaTech Innovations will design and develop a cross-platform mobile application for the client. The scope includes product planning, UI/UX design, backend integration, testing, and deployment to mobile app stores. All deliverables must be completed in accordance with the schedule and quality standards outlined below.
+
+Email: ujjawal.patidar@gammaedge.io
+
+Deliverables:
+
+Deliverable Name: Mobile App Wireframes and Design System
+Delivery Date: 2026-03-12
+Deliverable Status: Pending
+Description: Creation of user flow diagrams, wireframes, and a design system including typography, colors, and reusable UI components for the mobile application.
+
+Deliverable Name: Authentication and User Management Module
+Delivery Date: 2026-03-10
+Deliverable Status: Pending
+Description: Development of backend services and APIs supporting user registration, login, password management, and role-based access control for the mobile application.
+
+Deliverable Name: Beta Version Deployment
+Delivery Date: 2026-03-15
+Deliverable Status: Pending
+Description: Deployment of a beta version of the mobile application for internal testing, including core features, API integration, and preliminary performance optimization.

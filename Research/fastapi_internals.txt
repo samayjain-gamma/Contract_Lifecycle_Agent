@@ -13,6 +13,3 @@ so no true parallelism achieved
 if achieve ture prallelism == True:
     insoide APscheduler:
         use ProcessPoolExecutor not ThreadPoolExecutor  (both are from concurrent.futures)
-
-
-    
